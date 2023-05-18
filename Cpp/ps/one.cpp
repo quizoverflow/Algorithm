@@ -52,8 +52,7 @@ int main(){
             if(next >= 100) continue;
             if(!visited[next]){
                 qu.push({next,cnt + 1});
-                if(flag) continue;
-                visited[next] = true;
+                if(!flag) visited[next] = true;
             }
         }
 

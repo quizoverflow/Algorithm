@@ -1,32 +1,33 @@
 class Country:
-    name = ""
-    population = ""
-
-    #def __init__(self, name, population):
-        #self.name = 0
-        #self.population = 0        ...이건 뭐임?? 형변환까지 해버렸네??
-
+    nation = ""
+    popular = 0
+    def __init__(self,val1, val2):
+        self.nation = val1
+        self.popular = val2
+    
     def display(self):
-        print(f"국가명 : {self.name}, 인구수 : {self.population}")
+        print(f"국가명: {self.nation}")
+        print(f"인구수: {self.popular}")
 
 class NewCountry(Country):
-    capital = ""
+    capital =""
 
-    #def __init__(self, name, population, capital):
-    #    self.capital = 0
-
+    def __init__(self,val1,val2,val3):
+        self.nation = val1
+        self.popular =val2
+        self.capital = val3
+    
     def display(self):
-        print(f"국가명 : {self.name}, 인구수 : {self.population}, 수도명 : {self.capital}")
+        super().display()
+        print(f"수도명: {self.capital}")
+    
 
 
-aCountry = Country()
-aCountry.name = 'Korea'
-aCountry.population = 5000
 
-bCountry = NewCountry() #클래스의 인자는 함수의 인자라고 생각하면 안됨
-bCountry.name = 'NewWorld'
-bCountry.population = 5000
-bCountry.capital = 'Seoul'
 
+
+
+aCountry = Country('Korea', 5000)
+bCountry = NewCountry('NewWorld', 5000, 'Seoul')
 aCountry.display()
 bCountry.display()
