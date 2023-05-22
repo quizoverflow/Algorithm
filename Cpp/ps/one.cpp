@@ -8,54 +8,24 @@
 using namespace std;
 
 
-
 int main(){
 #ifndef ONLINE_JUDGE
     cout<<"[DEBUG] debug enabled!\n";
 #endif
     TIMME
+    int n;
+    cin >> n;
+    vector<vector<pair<int,int>>> loc(3,vector<pair<int,int>>(n));
+    for(int i = 0; i< n; ++i){
+        int a , b, c;
+        loc[i][0] = {a,i};
+        loc[i][1] = {b,i};
+        loc[i][2] = {c,i};
+    }
+    for(int i = 0; i < 2; ++i) sort(loc[i].begin(),loc[i].end());
+    for(int i = 0; i < 3; ++i){
+        
+    } 
     
-    int n , m;
-    cin >> n >> m;
-    vector<int> board(100,0);
-    vector<bool> is_tel(100,false);
-    for(int i = 0; i < n; ++i){
-        int x, y;
-        cin >> x >> y;
-        board[x] = y;
-        is_tel[x] =true;
-    }
-    for(int i = 0; i< m; ++i){
-        int u, v;
-        cin >> u >>v;
-        board[u] = v;
-        is_tel[u] =true;
-    }
-    vector<int> visited(100,false);
-    queue<pair<int,int>> qu;
-    qu.push({0,0});
-    while(!qu.empty()){
-        int now = qu.front().first;
-        int cnt = qu.front().second;
-        qu.pop();
-        if(now == 99){
-            cout<<cnt;
-            break;
-        }
-        for(int i = 1; i <= 6; ++i){
-            int next = now + i;
-            bool flag = false;
-            if(is_tel[next]){
-                flag = true;
-                next = board[next];
-            }
-            if(next >= 100) continue;
-            if(!visited[next]){
-                qu.push({next,cnt + 1});
-                if(!flag) visited[next] = true;
-            }
-        }
-
-    }
     return 0;
 }

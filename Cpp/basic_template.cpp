@@ -12,7 +12,7 @@ int main(){
 #ifndef ONLINE_JUDGE
     cout<<"[DEBUG] debug enabled!\n";
 #endif
-    TIMME
+    TIMME   
 
 
     return 0;
