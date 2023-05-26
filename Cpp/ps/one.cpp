@@ -13,19 +13,26 @@ int main(){
     cout<<"[DEBUG] debug enabled!\n";
 #endif
     TIMME
-    int n;
+    int n,p,t;
+    int table[2][16];
     cin >> n;
-    vector<vector<pair<int,int>>> loc(3,vector<pair<int,int>>(n));
-    for(int i = 0; i< n; ++i){
-        int a , b, c;
-        loc[i][0] = {a,i};
-        loc[i][1] = {b,i};
-        loc[i][2] = {c,i};
+    for(int i = 0; i < n; ++i){
+        cin >> t >> p;
+        table[0][i] = t;
+        table[1][i] = p;
     }
-    for(int i = 0; i < 2; ++i) sort(loc[i].begin(),loc[i].end());
-    for(int i = 0; i < 3; ++i){
-        
-    } 
-    
+    vector<int> dp(n+1,0);
+    int day = 1;
+    if(table[0][n] == 1) dp[n] = table[1][n];
+    for(int i = n-1; i >= 1; --i){
+        day++;
+        if(day < table[0][i]){
+            dp[i] = dp[i+1];
+        }
+        else{
+            dp[i] = max(dp[i+table[0][i]] + table[1][i] , dp[i+1]);
+        }
+    }
+    cout<<dp[1];
     return 0;
 }
