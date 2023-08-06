@@ -1,5 +1,7 @@
-#include <bits/stdc++.h>
-#define TIMME ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#ifndef DEBUG_H
+#define DEBUG_H
+#include <iostream>
+#include <stdarg.h>
 using namespace std;
 void __print(int x) {cerr << x;}
 void __print(long x) {cerr << x;}
@@ -22,20 +24,6 @@ void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ 
 void _print() {cerr << "]\n";}
 template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
-#ifndef ONLINE_JUDGE
 #define debug(x...) cerr << "[DMSG: " << #x << "] = ["; _print(x)
-#else
-#define debug(x...)
+
 #endif
-#define INF 1e9
-
-
-int main(){
-#ifndef ONLINE_JUDGE
-    cout<<"[DEBUG] debug enabled!\n";
-#endif
-    TIMME
-
-
-    return 0;
-}
