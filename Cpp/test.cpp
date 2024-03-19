@@ -4,7 +4,8 @@ using namespace std;
 
 int main(void){
     
-    cout<<sizeof(int);
+    cout<<"hello";
+    
     return 0;
 
 }
