@@ -92,5 +92,16 @@
         "xtr1common": "cpp",
         "xtree": "cpp",
         "xutility": "cpp"
+    },
+    "BOJ.author": "quizvoverflow",
+    "BOJ.extension": "cpp",
+    "vim.handleKeys": {
+        "<C-c>": true,
+        "<C-x>": false,
+        "<C-v>": false, 
+        "<C-f>": true,
+        "<C-a>": false,
+        "<C-z>": false
+
     }
 }

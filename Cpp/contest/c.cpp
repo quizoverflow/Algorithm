@@ -8,15 +8,16 @@
 #endif 
 using namespace std;
 
-class jinu{
-    jinu(){
-        cout<< "jinu object - instance maked"<<endl;
-    }
-};
-
 int main(){
     FASTIO
-
-
+    
+    int t;
+    cin >> t;
+    while(t--){
+        int n,bn;
+        cin >> n;
+        bn = n * (n-1) / 2;
+        
+    }
     return 0;
 }

@@ -8,15 +8,9 @@
 #endif 
 using namespace std;
 
-class jinu{
-    jinu(){
-        cout<< "jinu object - instance maked"<<endl;
-    }
-};
-
 int main(){
     FASTIO
-
+    
 
     return 0;
 }

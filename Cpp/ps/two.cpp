@@ -8,32 +8,27 @@
 #endif 
 using namespace std;
 
-#define p(x) x*x
-
-struct COORD{
-    double x, y;
-};
-
-double line(COORD a, COORD b){
-    return sqrt(p((a.x-b.x)) + p((a.y-b.y)));
-}
+typedef unsigned long long ull;
 
 int main(){
     FASTIO
-    cout.precision(6);
-    cout<<fixed;
-    int n;
-    double a,b;
-    COORD tmp;
-    vector<COORD> point;
-    cin >> n;
-    for(int i = 0; i < n; ++i){
-        cin >> a >> b;
-        tmp.x = a; tmp.y = b;
-        point.push_back(tmp);
+
+    vector<ull> x, y;
+    ull tmp;
+    int xSize, ySize;
+    cin >> xSize >> ySize;
+
+    for(int i = 0; i < xSize; ++i){
+        cin >> tmp;
+        x.push_back(tmp);
     }
+    for(int i = 0; i < ySize; ++i){
+        cin >> tmp;
+        y.push_back(tmp);
+    }
+
     
-    
+
 
     return 0;
 }

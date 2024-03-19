@@ -8,14 +8,12 @@
 #endif 
 using namespace std;
 
-class jinu{
-    jinu(){
-        cout<< "jinu object - instance maked"<<endl;
-    }
-};
-
 int main(){
     FASTIO
+    srand(101);
+    for(int i = 0; i < 10; ++i){
+        cout<< rand() % 100 << endl;
+    }    
 
 
     return 0;

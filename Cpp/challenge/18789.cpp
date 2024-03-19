@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include<time.h>
 #define TIMME ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #ifdef ONLINE_JUDGE
 #define dbg(x,y) ((void)0)
@@ -64,6 +65,8 @@ int main(){
     cout<<"[DEBUG] debug enabled!\n";
 #endif
     TIMME
+    srand(unsigned (time(NULL)));
+
     register int i , j, k; // 조금이라도 더 빨리 연산하라고..
     int first_gene_size,roulette_size = 1275; //룰렛 휠 크기..상위 50개를 기준으로 설정됨
     //초기 유전자 수 설정 (일단 100개)
@@ -85,7 +88,7 @@ int main(){
         genes_point.push_back({result(genes[i]),i});
     }
     sort(genes_point.begin(),genes_point.end());
-    cout<<" == <first generation genes production has completed  == \n";
+    cout<<" == <first generation genes production has completed  == "<<endl;
 
     //유전 시작
     int count = 0;
@@ -106,12 +109,12 @@ int main(){
                 }
             }
         }
-        if(rand()%1000 == 1){ // 0.1퍼센트의 확률로 자손 중 하나에 돌연변이
-            next[rand()%100][rand()%8][rand()%14] = 5;
+        if(rand()%100 == 1){ // 1퍼센트의 확률로 자손 중 하나에 돌연변이
+            next[rand()%100][rand()%8][rand()%14] = rand()%10;
         }
         for(i = 0; i < (first_gene_size / 2); ++i){
             for(j = 0; j < 8; ++j){
-                for(k = 0; k < 8; ++k){
+                for(k = 0; k < 14; ++k){
                     genes[i][j][k] = next[i][j][k];
                 }
             }
@@ -124,14 +127,14 @@ int main(){
         count++;
 
         int max_point = genes_point.back().first;
-        if(count % 10 == 0) cout<<"current maximum point = " << max_point <<"\n";
+        if(count % 10 == 0) cout<<"current maximum point = " << max_point <<endl;
         if(max_point > 3000){
-            cout<<"===complete===\n";
+            cout<<"===complete==="<<endl;
             for(i = 0; i < 8; ++i){
                 for(j = 0; j < 14; ++j){
-                    cout<<next[genes_point[0].second][i][j];
+                    cout<<next[genes_point.back().second][i][j];
                 }
-                cout<<"\n";
+                cout<<endl;
             }
         }
     }

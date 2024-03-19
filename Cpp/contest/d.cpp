@@ -10,25 +10,28 @@ using namespace std;
 
 int main(){
     FASTIO
+
     int t;
     cin >> t;
-
     while(t--){
-        int n, tmp,e=0,o=0;
+        int n,tmp;
         cin >> n;
+        vector<pair<int,int>> a;
+        vector<int> b;
+        for(int i = 0; i< n; ++i){
+            cin >> tmp;
+            a.push_back({tmp,i});
+        }
         for(int i = 0; i < n; ++i){
             cin >> tmp;
-            if(tmp%2) o++;
-            else e++;
+            b.push_back(tmp);
         }
-        if(o%2){
-            cout<<"no\n";
+        sort(a.begin(),a.end());
+        for(int i = 0; i < n; ++i){
+            if(a[i].first - b[a[i].second] > )
         }
-        else{
-            cout<<"yes\n";
-        }
-        
     }
+    
 
     return 0;
 }
