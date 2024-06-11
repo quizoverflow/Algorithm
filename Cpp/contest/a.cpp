@@ -10,24 +10,14 @@ using namespace std;
 
 int main(){
     FASTIO
-    int t;
+    
+    int t,a,b,c;
     cin >> t;
-
     while(t--){
-        int n, tmp,e=0,o=0;
-        cin >> n;
-        for(int i = 0; i < n; ++i){
-            cin >> tmp;
-            if(tmp%2) o++;
-            else e++;
-        }
-        if(o%2){
-            cout<<"no\n";
-        }
-        else{
-            cout<<"yes\n";
-        }
-        
+        cin >> a >> b >> c;
+        if(a < b && b < c) cout << "STAIR\n";
+        else if(a < b && b > c)cout<<"PEAK\n";
+        else cout<< "NONE\n";
     }
 
     return 0;

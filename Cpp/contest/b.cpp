@@ -13,20 +13,34 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        string s;
-        cin >> s;
-        int n = s.size();
-        bool c = false;
-        for(int i = n-1; i >= 0; --i){
-            if(s[i] >= '5'){
-                for(int j = i; j < n; ++j) s[j] = '0';
-                if(i > 1) s[i-1]++;
-                else c = true;
+        int n;
+        cin >> n;
+        vector<vector<char>> board(2*n,vector<char>(2*n));
+        bool flag = true;
+        for(int i = 0; i < 2*n; ++i){
+            for(int j = 0; j < 2*n; ++j){
+                if(i % 4  == 0 || i % 4 == 1){
+                    if(j % 4  == 0 || j % 4 == 1){
+                        board[i][j] = '#';
+                    }
+                    else{
+                        board[i][j] = '.';
+                    }
+                }
+                else{
+                    if(j % 4  == 0 || j % 4 == 1){
+                        board[i][j] = '.';
+                    }
+                    else board[i][j] = '#';
+                }
             }
         }
-        if(c) cout<<1;
-        for(auto &a : s) cout<< a - '0';
-        cout<<"\n";
+        for(int i = 0; i < 2*n; ++i){
+            for(int j = 0; j < 2*n; ++j){
+                cout<<board[i][j];
+            }
+            cout<<"\n";
+        }
     }
 
     return 0;
