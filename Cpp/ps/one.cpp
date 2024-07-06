@@ -7,65 +7,21 @@
 #endif 
 using namespace std;
 
-#define INF 1e9
-int n;
-struct INFO{
-    int start,end,cost;
-};
+vector<int> getPi(string t, string p){
 
-void input_case(vector<INFO> &g){
-    int m , w;
-    int s, e, t;
-    cin >> n >> m >> w;
-    for(int i = 0; i < m; ++i){
-        cin >> s >> e >> t;
-        g.push_back({s,e,t});
-        g.push_back({e,s,t});
-    }
-    for(int i = 0; i < w; ++i){
-        cin >> s >> e >> t;
-        g.push_back({s,e,-t});
-    }
 }
 
-bool BellmanFord(vector<INFO> &g){
-    int dist[501];
-    fill(dist,dist+501,INF);
-    dist[1] = 0;
+vector<int> KMP(string t, string p){
 
-    for(int i = 0; i < n-1; ++i){
-        for(auto &edge : g){
-            if(dist[edge.end] > dist[edge.start] + edge.cost){
-                dist[edge.end] = dist[edge.start] + edge.cost;
-            }
-        }
-    }
-    for(int i = 0; i < n-1; ++i){
-        for(auto &edge : g){
-            if(dist[edge.end] > dist[edge.start] + edge.cost){
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-void run_case(){
-    vector<INFO> graph;
-    input_case(graph);
-    if(BellmanFord(graph) == true) cout <<"YES\n";
-    else cout<<"NO\n";
 }
 
 int main(){
     FASTIO
 
-    int testcase;
-    cin >> testcase;
+    string t,p;
+    cin >> t;
 
-    while(testcase--){
-        run_case();
-    }
+    for(int i = 0 ; i < n; ++i)
 
     return 0;
 }
