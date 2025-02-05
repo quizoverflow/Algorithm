@@ -1,5 +1,5 @@
 /*
-#BOJ 31925너 재능있어
+#BOJ 31929너 재능있어
 #DP
 */
 #include <bits/stdc++.h>
