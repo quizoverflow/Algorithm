@@ -10,19 +10,31 @@ using namespace std;
 int main(){
     FASTIO
 
-    vector<int> v = {1,2,3,4,5};
-    debug(v);
 
-    vector<int> a = {9,9,9,9};
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<>> pq;
 
-    v.assign(a.begin(),a.end());
+    vector<pair<int,int>> v ={
+        {1,0},
+        {1,1},
+        {9,2},
+        {8,4},
+        {10,1},
+        {9,3},
+        {1,-1}
+    };
+
+    for(int i = 0; i < v.size(); ++i){
+        pq.push(v[i]);
+    }
+
+    while(!pq.empty()){
+       // cout << pq.top().first << " " << pq.top().second << endl;
+        pq.pop();
+    }
+
+    int i = 0;
+
+    cout << i * (i-1) / 2;
     
-    cout << "#2"<<v.size() << endl;
-    debug(v);
-
-    v.assign(1,3);
-    cout <<"#3"<<v.size() << endl;
-    debug(v);
-
     return 0;
 }
